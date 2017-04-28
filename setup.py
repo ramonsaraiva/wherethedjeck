@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='wherethedjeck',
-      version='0.1.2',
+      version='0.1',
       description='Quickly find where the heck things are in Django framework',
       url='https://github.com/ramonsaraiva/wherethedjeck',
       author='Ramon Saraiva',
