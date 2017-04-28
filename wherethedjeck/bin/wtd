@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+
+import argparse
+
+from wherethedjeck.core import DjangoGrep
+
+
+def parse():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('queries', nargs='+', type=str)
+    return parser.parse_args()
+
+
+def main():
+    args = parse()
+    for query in args.queries:
+        dgrep = DjangoGrep(query)
+        result = dgrep.get_result()
+        if result:
+            print('from {0} import {1}'.format(result, query))
+        else:
+            print('Could not find `{0}` in Django framework'.format(query))
+
+
+if __name__ == '__main__':
+    main()
